@@ -10,7 +10,7 @@ namespace _2024_10_08
         {
             ListViewItem item = new ListViewItem(Id.ToString());
             item.SubItems.AddRange(new string[] {
-                Age.ToString(), 
+                Age.ToString(),
                 Name,
             });
             return item;

@@ -72,7 +72,18 @@ namespace _2024_10_08
         {
             try
             {
-                new MySqlCommand($"INSERT INTO `cats` (`name`, `ąge`) VALUES ('{cat.Name}', {cat.Age})", Connection).ExecuteNonQuery();
+                new MySqlCommand($"INSERT INTO `cats` (`name`, `age`) VALUES ('{cat.Name}', {cat.Age})", Connection).ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                ShowError(e);
+            }
+        }
+        public static void UpdateCat(Cat cat)
+        {
+            try
+            {
+                new MySqlCommand($"UPDATE `cats` SET `name`='{cat.Name}', `age`={cat.Age} WHERE `id`={cat.Id}", Connection).ExecuteNonQuery();
             }
             catch (Exception e)
             {
